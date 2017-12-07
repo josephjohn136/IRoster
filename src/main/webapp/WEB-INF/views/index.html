@@ -1,0 +1,73 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+          th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+    
+	<link th:href="@{static/css/app.css}" rel="stylesheet" media="screen"/>
+</head>
+
+
+<body ng-app="clubApp" class="ng-cloak">
+	<div id="wrapper">
+		<div id="sidebar-wrapper">
+			<nav id="spy">
+				<ul class="sidebar-nav nav">
+					<li class="sidebar-brand"><a href="#/"><span class="fa fa-home solo">Home</span></a></li>
+					<li class="sidebar-brand"><a href="#user"><span class="fa fa-user solo">Members</span></a></li>
+					<li class="sidebar-brand"><a href="#group"><span class="fa fa-users solo">Groups</span></a></li>
+				</ul>
+			</nav>
+		</div>
+		<div id="page-content-wrapper">
+			<div class="page-content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div ng-view=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+<!-- ########################## 3rd Party JS libraries  ########################## -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"
+        th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js}"></script>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"
+        th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js" 
+		th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+        th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js}"></script>
+        
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>        
+
+<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"
+        th:src="@{https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js}"></script>
+        
+<script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js" 
+		th:src="@{https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js}"></script>
+		
+<!--  ########################## Custom JS files  ########################## -->
+
+<script type="text/javascript" th:src="@{static/js/app.js}"></script>
+        
+<script type="text/javascript" th:src="@{static/js/route.js}"></script>
+		
+<script type="text/javascript" th:src="@{static/js/controller/user_controller.js}"></script>
+
+</body>
+</html>

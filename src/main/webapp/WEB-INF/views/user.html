@@ -1,0 +1,159 @@
+<div class="generic-container" ng-controller="UserController">
+		<div class="panel panel-default" ng-show="add_user">
+		<div class="panel-heading">
+			<span class="lead">Add Member</span>
+		</div>
+		
+		<div class="formcontainer">
+			<form ng-submit="submit()" name="userForm" class="form-horizontal">
+				<input type="hidden" ng-model="user.userId"/>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="firstName">First Name</label>
+						<div class="col-md-5">
+							<input type="text" id="firstName" ng-model="user.firstName"
+								class="form-control input-sm"
+								placeholder="Enter First Name" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="lastName">Last Name</label>
+						<div class="col-md-5">
+							<input type="text" id="lastName" ng-model="user.lastName"
+								class="form-control input-sm"
+								placeholder="Enter last name" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="userName">Username</label>
+						<div class="col-md-5">
+							<input type="text" id="userName" ng-model="user.userName"
+								class="form-control input-sm"
+								placeholder="Enter Username" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="password">Password</label>
+						<div class="col-md-5">
+							<input type="password" id="password" ng-model="user.password"
+								class="form-control input-sm"
+								placeholder="Enter Password" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="dob">Date of Birth</label>
+						<div class="col-md-5">
+							<p class="input-group">
+								<input type="text" class="form-control"
+									uib-datepicker-popup="{{format}}" ng-model="user.dob" 
+									is-open="popup1.opened" datepicker-options="dateOptions"
+									ng-required="true" close-text="Close"/> <span
+									class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open1()">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+								</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="mobile">Mobile</label>
+						<div class="col-md-5">
+							<input type="text" id="mobile" ng-model="user.mobile"
+								class="form-control input-sm"
+								placeholder="Enter your mobile no" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="email">Email</label>
+						<div class="col-md-5">
+							<input type="email" id="email" ng-model="user.email"
+								class="form-control input-sm"
+								placeholder="Enter your email id" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="driverLicenseNo">Driver License No</label>
+						<div class="col-md-5">
+							<input type="text" id="driverLicenseNo" ng-model="user.driverLicenseNo"
+								class="form-control input-sm"
+								placeholder="Enter your Dirver's License Number" />
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable" for="address">Address</label>
+						<div class="col-md-1">
+							<input type="text" id="unitNo" ng-model="user.address.unitNo"  class="form-control input-sm" placeholder="Unit" />
+						</div>
+						<div class="col-md-4">
+							<input type="text" id="street" ng-model="user.address.street" class="form-control input-sm" placeholder="Street" />
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable"></label>
+						<div class="col-md-5">
+							<input type="text" id="suburb" ng-model="user.address.suburb" class="form-control input-sm" placeholder="Suburb" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable"></label>
+						<div class="col-md-5">
+							<input type="text" id="city" ng-model="user.address.city" class="form-control input-sm" placeholder="City" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable"></label>
+						<div class="col-md-5">
+							<input type="text" id="state" ng-model="user.address.state" class="form-control input-sm" placeholder="State" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable"></label>
+						<div class="col-md-2">
+							<input type="text" id="postcode" ng-model="user.address.postcode" class="form-control input-sm" placeholder="Postcode" />
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="row">
+					<div class="form-actions floatRight">
+						
+						<button ng-if="user.userId == null" type="submit" class="btn btn-primary btn-sm">Add</button>
+						<button ng-if="user.userId != null" type="submit" class="btn btn-primary btn-sm">Update</button>
+						<!-- <input type="submit" value="Add" class="btn btn-primary btn-sm" /> -->
+						<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Reset Form</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+		
+</div>
